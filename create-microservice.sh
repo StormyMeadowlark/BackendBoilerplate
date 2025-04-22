@@ -14,7 +14,8 @@ fi
 echo "🚀 Creating new microservice: $SERVICE_NAME"
 
 # Step 1: Copy the boilerplate
-cp -r $TEMPLATE_DIR $DEST_DIR
+cp -r . ../$SERVICE_NAME
+
 
 # Step 2: Replace placeholder names
 cd $DEST_DIR

@@ -120,3 +120,8 @@ This boilerplate is intended for internal use within Skynetrix. If you want to m
 
 **Built for the Skynetrix Platform.**  
 _Innovation in Every Shift, Customization in Every Solution._
+
+## Use for Microservice Creation
+
+- run create-microservice.sh and update the following items
+- README.md
