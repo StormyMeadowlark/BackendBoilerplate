@@ -3,7 +3,9 @@
 # Usage: ./create-microservice.sh service-name
 
 SERVICE_NAME=$1
-TEMPLATE_DIR=./BackendBoilerplate
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TEMPLATE_DIR="$SCRIPT_DIR"
+DEST_DIR="$SCRIPT_DIR/../$SERVICE_NAME"
 DEST_DIR=../$SERVICE_NAME
 
 if [ -z "$SERVICE_NAME" ]; then
@@ -25,5 +27,10 @@ rm -rf .git
 git init
 git add .
 git commit -m "Init $SERVICE_NAME microservice from boilerplate"
+
+# Step 4: add a Repo to github for microservice
+git remote add origin git@github.com:StormyMeadowlark/$SERVICE_NAME.git
+git branch -M main
+git push -u origin main
 
 echo "✅ $SERVICE_NAME microservice created at $DEST_DIR"
